@@ -20,7 +20,7 @@ if($('meta[name=progtype]').attr('content') == 'show') {  // auth for the m3u8 i
                 }
             }
         }
-        getIDXhr.open('GET', `https://api.iview.abc.net.au/v2/show/${seriesID}`)
+        getIDXhr.open('GET', `/iviewapi/v2/show/${seriesID}`)
         getIDXhr.send()
     } else {
         tokenXhr = new XMLHttpRequest();
@@ -78,11 +78,11 @@ if($('meta[name=progtype]').attr('content') == 'show') {  // auth for the m3u8 i
                         }
                     }
                 }
-                apiXhr.open('GET', `https://api.iview.abc.net.au/v2/video/${seriesID}`)
+                apiXhr.open('GET', `/iviewapi/v2/video/${seriesID}`)
                 apiXhr.send()
             }
         }
-        tokenXhr.open('GET', `https://iview.abc.net.au${path}&sig=${sig}`)
+        tokenXhr.open('GET', `/iviewbase${path}&sig=${sig}`)
         tokenXhr.send()
     }
 } else {
@@ -112,12 +112,12 @@ if($('meta[name=progtype]').attr('content') == 'show') {  // auth for the m3u8 i
                     }
                 }
     
-                episodeXhr.open("GET", `https://api.iview.abc.net.au/v2/series/${seriesNameID}`, true);
+                episodeXhr.open("GET", `/iviewapi/v2/series/${seriesNameID}`, true);
                 episodeXhr.send();
             }
             }
             
     }
-    seriesXhr.open("GET", `https://api.iview.abc.net.au/v2/show/${seriesID}`, true);
+    seriesXhr.open("GET", `/iviewapi/v2/show/${seriesID}`, true);
     seriesXhr.send();
 }
